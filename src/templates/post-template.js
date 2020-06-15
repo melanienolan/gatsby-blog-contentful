@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/Layout"
 
 export const query = graphql`
@@ -8,8 +9,8 @@ export const query = graphql`
       id
       slug
       title
-      description {
-        description
+      text {
+        json
       }
     }
   }
@@ -18,8 +19,8 @@ export const query = graphql`
 const PostTemplate = ({ data: { blogPost } }) => (
   <Layout>
     <h1>{blogPost.title}</h1>
-    <p>{blogPost.description.description}</p>
 
+    <p>{documentToReactComponents(blogPost.text.json)}</p>
     <Link to="/">&larr; Back to Home</Link>
   </Layout>
 )
