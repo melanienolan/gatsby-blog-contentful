@@ -10,7 +10,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `)
 
   if (result.errors) {
-    reporter.panic("failed to create pages", result.errors)
+    reporter.panic("failed to create pages", JSON.stringify(result.errors))
   }
   const blogPosts = result.data.allContentfulBlogPost.nodes
 
