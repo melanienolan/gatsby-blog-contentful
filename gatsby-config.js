@@ -3,6 +3,8 @@ const tailwindConfig = require("./tailwind.config.js")
 
 const { theme } = resolveConfig(tailwindConfig)
 
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: "Gatsby Starter Tailwind CSS",
@@ -26,6 +28,13 @@ module.exports = {
       resolve: "gatsby-plugin-postcss",
       options: {
         postCssPlugins: [require("tailwindcss"), require("autoprefixer")],
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: "tncu8shbwjqr",
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],
