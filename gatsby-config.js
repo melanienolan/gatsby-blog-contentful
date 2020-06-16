@@ -1,9 +1,11 @@
 const resolveConfig = require("tailwindcss/resolveConfig")
 const tailwindConfig = require("./tailwind.config.js")
-
+const dotenv = require("dotenv")
 const { theme } = resolveConfig(tailwindConfig)
 
-require("dotenv").config()
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config()
+}
 
 module.exports = {
   siteMetadata: {
