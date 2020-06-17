@@ -10,6 +10,11 @@ const useBlogPosts = () => {
           description {
             description
           }
+          heroImage {
+            fluid(maxWidth: 100, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
         }
       }
     }
@@ -18,6 +23,7 @@ const useBlogPosts = () => {
     slug: blogPost.slug,
     title: blogPost.title,
     description: blogPost.description.description,
+    image: blogPost.heroImage.fluid,
   }))
 }
 
