@@ -1,6 +1,18 @@
 import React from "react"
-import Layout from "../components/Layout.js"
+import Layout from "../components/Layout"
+import Container from "../components/Container"
+import PageTitle from "../components/PageTitle"
+import usePerson from "../hooks/usePerson"
 
 export default () => {
-  return <Layout></Layout>
+  const person = usePerson()
+  console.log(person)
+  return (
+    <Layout>
+      <Container>
+        <PageTitle>About {person.name}</PageTitle>
+        <p>{person.bio}</p>
+      </Container>
+    </Layout>
+  )
 }

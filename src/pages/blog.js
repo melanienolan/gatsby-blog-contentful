@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/Layout.js"
-import Container from "../components/Container.js"
+import Layout from "../components/Layout"
+import Container from "../components/Container"
+import PageTitle from "../components/PageTitle"
 import PostPreview from "../components/PostPreview"
 import useBlogPosts from "../hooks/useBlogPosts"
 
@@ -10,6 +11,7 @@ export default () => {
   return (
     <Layout>
       <Container>
+        <PageTitle>Blog</PageTitle>
         <ul className="flex flex-wrap justify-around content-center">
           {blogPosts.map(post => (
             <PostPreview post={post} />
