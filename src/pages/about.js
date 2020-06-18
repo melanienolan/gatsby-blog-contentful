@@ -4,6 +4,7 @@ import { BLOCKS } from "@contentful/rich-text-types"
 import Layout from "../components/Layout"
 import Container from "../components/Container"
 import PageTitle from "../components/PageTitle"
+import TextBox from "../components/TextBox"
 import usePerson from "../hooks/usePerson"
 
 export default () => {
@@ -13,15 +14,15 @@ export default () => {
     <Layout>
       <Container>
         <PageTitle>About {person.name}</PageTitle>
-        <div className="p-4 text-gray-800">
+        <TextBox>
           {documentToReactComponents(person.description, {
             renderNode: {
-              [BLOCKS.PARAGRAPH]: (node, children) => (
-                <p className="text-gray-800 mb-4">{children}</p>
+              [BLOCKS.PARAGRAPH]: (_node, children) => (
+                <p className="mb-4">{children}</p>
               ),
             },
           })}
-        </div>
+        </TextBox>
       </Container>
     </Layout>
   )
