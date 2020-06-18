@@ -13,7 +13,7 @@ const useBlogPosts = () => {
             json
           }
           image {
-            fluid(maxWidth: 100, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_withWebp
             }
           }
