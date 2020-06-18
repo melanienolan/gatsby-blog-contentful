@@ -9,21 +9,21 @@ if (process.env.NODE_ENV !== "production") {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter Tailwind CSS",
+    title: "Gatsby Starter Blog Contentful",
     author: "Melanie Nolan",
-    description: "A Gatsby starter to set you up with Tailwind CSS",
+    description: "A Gatsby starter to set you up with Contentful",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Gatsby Starter Tailwind CSS",
-        short_name: "Gatsby Starter Tailwind CSS",
+        name: "Gatsby Starter Blog Contentful",
+        short_name: "Gatsby Starter Blog Contentful",
         start_url: "/",
         background_color: theme.colors.white,
-        theme_color: theme.colors.teal[500],
-        icon: "static/logo.svg",
+        theme_color: theme.colors.purple[500],
+        icon: "static/logo.png",
       },
     },
     {
