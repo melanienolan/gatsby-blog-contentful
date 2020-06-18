@@ -4,7 +4,7 @@ A blog site built with Gatsby, Contentful and TailwindCSS.
 
 ## Demo site
 
-The demo site can be found [here](https://laughing-volhard-631b39.netlify.app/)
+The demo site can be found [here](https://pedantic-shockley-f78d29.netlify.app)
 
 ## Get up and running
 
