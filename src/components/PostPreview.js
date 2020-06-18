@@ -4,11 +4,7 @@ import Img from "gatsby-image"
 
 const PostPreview = ({ post }) => {
   return (
-    <li
-      key={post.slug}
-      className="m-2 w-full rounded-lg shadow overflow-hidden"
-      style={{ maxWidth: 320 }}
-    >
+    <li className="m-2 w-full max-w-xs rounded-lg shadow overflow-hidden">
       <Link to={`/blog/${post.slug}`}>
         <div className="relative pb-2/3">
           <Img
@@ -18,8 +14,7 @@ const PostPreview = ({ post }) => {
             fluid={post.image}
           />
         </div>
-
-        <div className="p-4">
+        <div className="p-4 bg-white">
           <h3 className="text-base font-bold text-gray-700">{post.title}</h3>
           <p className="text-sm text-gray-800">{post.description}</p>
         </div>
