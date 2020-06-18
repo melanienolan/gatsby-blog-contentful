@@ -6,7 +6,7 @@ const PostPreview = ({ post }) => {
   return (
     <li
       key={post.slug}
-      className="my-4 w-full rounded-lg shadow overflow-hidden"
+      className="m-2 w-full rounded-lg shadow overflow-hidden"
       style={{ maxWidth: 320 }}
     >
       <Link to={`/blog/${post.slug}`}>
@@ -20,8 +20,8 @@ const PostPreview = ({ post }) => {
         </div>
 
         <div className="p-4">
-          <h2 className="text-base font-bold">{post.title}</h2>
-          <p className="text-sm">{post.description}</p>
+          <h3 className="text-base font-bold text-gray-700">{post.title}</h3>
+          <p className="text-sm text-gray-800">{post.description}</p>
         </div>
       </Link>
     </li>
