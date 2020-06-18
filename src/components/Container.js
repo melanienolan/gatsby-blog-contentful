@@ -1,7 +1,7 @@
 import React from "react"
 
 const Container = ({ children }) => {
-  return <div className="container border border-black mx-auto">{children}</div>
+  return <div className="container mx-auto mt-8">{children}</div>
 }
 
 export default Container
