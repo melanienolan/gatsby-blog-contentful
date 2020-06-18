@@ -1,19 +1,17 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/Layout"
+import Container from "../components/Container"
+import PageTitle from "../components/PageTitle"
 
 export const query = graphql`
   query($slug: String!) {
     blogPost: contentfulBlogPost(slug: { eq: $slug }) {
-      id
       slug
       title
-      text {
-        json
-      }
-      heroImage {
+      description
+      image {
         fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
           ...GatsbyContentfulFluid_withWebp
         }
@@ -24,11 +22,21 @@ export const query = graphql`
 
 const PostTemplate = ({ data: { blogPost } }) => (
   <Layout>
-    <h1>{blogPost.title}</h1>
-    <Img fluid={blogPost.heroImage.fluid} style={{ maxWidth: 350 }} />
-    <p>{documentToReactComponents(blogPost.text.json)}</p>
-    <pre>{JSON.stringify(blogPost.heroImage, null, 2)}</pre>
-    <Link to="/blog">&larr; Back to Blog</Link>
+    <Container>
+      <div className="relative pb-2/3 mx-auto">
+        <Img
+          className="w-full h-full object-cover"
+          alt={blogPost.title}
+          style={{ position: "absolute" }}
+          fluid={blogPost.image.fluid}
+        />
+      </div>
+      <PageTitle>{blogPost.title}</PageTitle>
+      <p className="p-4 text-gray-800">{blogPost.description}</p>
+      <Link to="/blog">
+        <p className="m-4 text-purple-500 font-suez">&larr; Back to Blog</p>
+      </Link>
+    </Container>
   </Layout>
 )
 
