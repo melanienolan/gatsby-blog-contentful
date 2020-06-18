@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import Container from "../components/Container"
 import PageTitle from "../components/PageTitle"
@@ -8,6 +7,7 @@ import useBlogPosts from "../hooks/useBlogPosts"
 
 export default () => {
   const blogPosts = useBlogPosts()
+
   return (
     <Layout>
       <Container>
