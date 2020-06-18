@@ -7,10 +7,12 @@ const useBlogPosts = () => {
         nodes {
           slug
           title
-          description {
-            description
+          description
+          publishDate
+          body {
+            json
           }
-          heroImage {
+          image {
             fluid(maxWidth: 100, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_withWebp
             }
@@ -19,11 +21,14 @@ const useBlogPosts = () => {
       }
     }
   `)
+
   return data.allContentfulBlogPost.nodes.map(blogPost => ({
     slug: blogPost.slug,
     title: blogPost.title,
-    description: blogPost.description.description,
-    image: blogPost.heroImage.fluid,
+    description: blogPost.description,
+    date: blogPost.publishDate,
+    body: blogPost.body.json,
+    image: blogPost.image.fluid,
   }))
 }
 
