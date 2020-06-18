@@ -1,14 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-import logoSrc from "../../static/logo.svg"
+import Logo from "./Logo"
 
 const Header = () => {
   return (
     <header className="p-4 bg-purple-500 text-white font-semibold uppercase tracking-widest flex justify-between font-suez">
       <Link to="/" className="flex justify-center items-center">
-        <img src={logoSrc} alt="Logo" className="w-10 h-10" />
+        <Logo className="w-10 h-10" />
       </Link>
-      <nav className="">
+      <nav>
         <ul className="flex items-center">
           <li className="p-4 text-white">
             <Link
