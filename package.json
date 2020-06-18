@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-tailwind-css",
+  "name": "gatsby-blog-contentful",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:melanienolan/gatsby-starter-tailwind-css.git",
+  "repository": "git@github.com:melanienolan/gatsby-blog-contentful.git",
   "author": "Melanie Nolan <melly.nolan@gmail.com>",
   "license": "MIT",
   "scripts": {

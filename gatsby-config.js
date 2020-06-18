@@ -9,17 +9,17 @@ if (process.env.NODE_ENV !== "production") {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter Blog Contentful",
+    title: "Gatsby Blog Contentful",
     author: "Melanie Nolan",
-    description: "A Gatsby starter to set you up with Contentful",
+    description: "A blog built with Gatsby and Contentful",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Gatsby Starter Blog Contentful",
-        short_name: "Gatsby Starter Blog Contentful",
+        name: "Gatsby Blog Contentful",
+        short_name: "Gatsby Blog Contentful",
         start_url: "/",
         background_color: theme.colors.white,
         theme_color: theme.colors.purple[500],
